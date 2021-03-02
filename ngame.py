@@ -1,4 +1,4 @@
-
+import os
 level=1
 x=level+1
 right = True
@@ -6,18 +6,21 @@ playing = True
 scores = [0]
 
 while playing == True:
-	print("#=====> LEVEL "+str(level)+" <=====#")
+	os.system("clear")
 	try:
 		while right == True:
-			print(str(x)+" x "+str(level+1)+" = ?")
+			print("#=====> LEVEL "+str(level)+" <=====#")
+			n=level+1
+			print(str(x)+" x "+str(n)+" = ?")
 			entry = int(input(":"))
-			if entry == x*2:
+			if entry == x*n:
 				scores.append(x)
-				x = x*2
+				x = x*n
 			else :
 				right = False
-		print("the answer was: "+str(x*2))
-		print("Do you wich to continue?")
+			os.system("clear")
+		print("the answer was: "+str(x*n))
+		print("Do you wish to continue?")
 		entry = input("(y/n):")
 		if entry[:1] == "y":
 			level+=1
@@ -27,9 +30,10 @@ while playing == True:
 			final_score=0
 			for score in scores:
 				final_score += score
+			os.system("clear")
 			print("TOTAL SCORE")
 			print("!!! "+str(final_score)+" !!!")
-			print("thanks for playing.")
+			print("Thanks for playing.")
 			exit()
 	except:
 		exit()
