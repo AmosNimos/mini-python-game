@@ -19,7 +19,8 @@ while playing == True:
 			else :
 				right = False
 			os.system("clear")
-		print("the answer was: "+str(x*n))
+		print("You answered: "+str(entry))
+		print("The answer was: "+str(x*n))
 		print("Do you wish to continue?")
 		entry = input("(y/n):")
 		if entry[:1] == "y":
@@ -37,5 +38,3 @@ while playing == True:
 			exit()
 	except:
 		exit()
-
-
